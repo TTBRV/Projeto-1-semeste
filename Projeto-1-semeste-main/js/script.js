@@ -9,8 +9,9 @@ let email_troca = document.getElementById('email_troca')
 let senha_atual_troca = document.getElementById('senha_atual_troca')
 let senha_nova_troca = document.getElementById('senha_nova_troca')
 let trocar = document.getElementById('Trocar')
-
-
+let senha_excluir = document.getElementById('senha_excluir')
+let email_excluir = document.getElementById('email_excluir')
+let excluir = document.getElementById('excluir');
 
 class Cadastro{
     constructor(nome, senha, email){
@@ -70,6 +71,8 @@ else {
 
 });
 
+
+// trocar a senha
 trocar.addEventListener('click',function(){
     let email = email_troca.value;
     let senha_atual = senha_atual_troca.value;
@@ -77,6 +80,19 @@ trocar.addEventListener('click',function(){
     if(localStorage.getItem(email) == senha_atual){
         localStorage.removeItem(email)
         localStorage.setItem(email,senha_nova);
+    }
+    else{
+        alert('Insira a sua senha atual corretamente!')
+        return(null);
+    }
+})
+
+// excluir conta
+excluir.addEventListener('click',function(){
+    let email = email_excluir.value;
+    let senha_atual = senha_excluir.value;
+    if(localStorage.getItem(email) == senha_atual){
+        localStorage.removeItem(email)
     }
     else{
         alert('Insira a sua senha atual corretamente!')

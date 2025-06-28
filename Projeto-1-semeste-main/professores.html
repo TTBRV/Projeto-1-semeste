@@ -96,6 +96,45 @@ Trocar a senha</button>
       </div>
     </div>
   </div>
+
 </div>
+
+<!--EXCLUIR CONTA COMEÇA AQ-->
+
+<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+Excluir conta</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir conta</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+
+  <div class="form-floating mb-3">
+  <input type="email" class="form-control" id="email_excluir" placeholder="name@example.com">
+  <label for="floatingInput">Email</label>
+</div>
+<div class="form-floating">
+  <input type="password" class="form-control" id="senha_excluir" placeholder="Password">
+  <label for="floatingPassword">Senha Atual</label>
+</div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-danger" id="excluir">Excluir</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
 
 </body>
