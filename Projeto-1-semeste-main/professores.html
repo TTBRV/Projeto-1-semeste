@@ -59,5 +59,43 @@
 </div>
   <button type="button" class="btn btn-primary" id="logar">login</button>
 </div>
+</br></br></br>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+Trocar a senha</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Trocar senha</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+
+  <div class="form-floating mb-3">
+  <input type="email" class="form-control" id="email_troca" placeholder="name@example.com">
+  <label for="floatingInput">Email</label>
+</div>
+<div class="form-floating">
+  <input type="password" class="form-control" id="senha_atual_troca" placeholder="Password">
+  <label for="floatingPassword">Senha Atual</label>
+</div>
+<div class="form-floating">
+  <input type="email" class="form-control" id="senha_nova_troca" placeholder="Password">
+  <label for="floatingPassword">Nova senha</label>
+</div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-primary" id="Trocar">Trocar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
