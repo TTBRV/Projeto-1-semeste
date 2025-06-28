@@ -44,7 +44,11 @@ cadastrar.addEventListener('click',function(){
     Usuario = new Cadastro(nome_cadastro.value,senha_cadastro.value,email_cadastro.value);
     localStorage.setItem(Usuario.email,Usuario.senha)
 
-    window.location.href = 'professor_logado.html'
+    if(document.body.id=='aluno'){
+        window.location.href = 'aluno_logado.html'
+    }
+    else{
+    window.location.href = 'professor_logado.html'}
     document.querySelector('.card-title').textContent = localStorage.getItem('nome')
 })
 
@@ -63,7 +67,11 @@ logar.addEventListener('click', function(){
     }
 
 if(dados === senha){
-    window.location.href = 'professor_logado.html';
+    if(document.body.id=='aluno'){
+        window.location.href = 'aluno_logado.html'
+    }
+    else{
+    window.location.href = 'professor_logado.html'}
 } 
 else {
     alert('Senha incorreta.');
