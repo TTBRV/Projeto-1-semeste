@@ -162,8 +162,10 @@ if (btnAdicionar) {
         divTarefa.remove();
       });
       tarefas.appendChild(divTarefa);
+      console.log(`divTarefa = ${divTarefa}`)
+          console.log(`tipo da divTarefa ${typeof divTarefa}`)
       novaTarefaInput.value = '';
-      localStorage.setItem(`${c}`,divTarefa);
+      localStorage.setItem(`${c}`,novaTarefa);
       c++;
 
     }
@@ -175,11 +177,36 @@ if (btnAdicionar) {
 
 document.body.onload = function(){
   for(i=0; i<localStorage.length; i++){
-    console.log(`i= ${i}`)
-    nomeLS = localStorage.key(i);
-    console.log(`nomeLS= ${nomeLS}`)
-    tarefaAtual = localStorage.getItem(nomeLS)
-    console.log(`tarefaAtual= ${tarefaAtual}`)
-    tarefas.appendChild(tarefaAtual);
-  }
+
+      let textoSalvo = localStorage.getItem(localStorage.key(i));
+      const divTarefa = document.createElement('div');
+      divTarefa.classList.add('cards');
+
+      //cria o texto da tarefa
+      const spanTarefa = document.createElement('span'); // vi que esse span facilita o serviço
+      spanTarefa.textContent = textoSalvo;
+      divTarefa.appendChild(spanTarefa);
+      const botao_concluir = document.createElement('button');
+      botao_concluir.textContent = 'Concluir';
+      divTarefa.appendChild(botao_concluir);
+      const botao_excluir = document.createElement('button');
+      botao_excluir.textContent = 'Excluir';
+      divTarefa.appendChild(botao_excluir);
+
+
+
+      // muda a cor pra verde e tira os botões
+      botao_concluir.addEventListener('click', function () {
+        divTarefa.style.backgroundColor = 'green';
+        botao_concluir.style.display = 'none';
+        botao_excluir.style.display = 'none';
+        const spanConcluida = document.createElement('span');
+        spanConcluida.textContent = ' - Atividade Concluída';
+        divTarefa.appendChild(spanConcluida);
+      })
+      botao_excluir.addEventListener('click', function () {
+        divTarefa.remove();
+      });
+      tarefas.appendChild(divTarefa);
+}
 }
