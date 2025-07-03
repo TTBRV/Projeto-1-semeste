@@ -13,6 +13,7 @@ let trocar = document.getElementById('Trocar');
 let senha_excluir = document.getElementById('senha_excluir');
 let email_excluir = document.getElementById('email_excluir');
 let excluir = document.getElementById('excluir');
+let tarefas = document.getElementById('tarefas')
 
 // Classe de cadastro
 class Cadastro {
@@ -115,6 +116,10 @@ if (excluir) {
 }
 
 // MÓ PREGUIÇA DE FAZER O NEGÓCIO AHHHHHHH
+
+let c = localStorage.length //contador pra funcionar varios localStorage
+
+
 document.querySelectorAll('form').forEach((form) =>
   form.addEventListener('submit', (e) => e.preventDefault())
 );
@@ -127,6 +132,7 @@ if (btnAdicionar) {
 
     if (novaTarefa) {
       //container da tarefa
+
       const divTarefa = document.createElement('div');
       divTarefa.classList.add('cards');
 
@@ -141,6 +147,8 @@ if (btnAdicionar) {
       botao_excluir.textContent = 'Excluir';
       divTarefa.appendChild(botao_excluir);
 
+
+
       // muda a cor pra verde e tira os botões
       botao_concluir.addEventListener('click', function () {
         divTarefa.style.backgroundColor = 'green';
@@ -153,8 +161,25 @@ if (btnAdicionar) {
       botao_excluir.addEventListener('click', function () {
         divTarefa.remove();
       });
-      document.getElementById('tarefas').appendChild(divTarefa);
+      tarefas.appendChild(divTarefa);
       novaTarefaInput.value = '';
+      localStorage.setItem(`${c}`,divTarefa);
+      c++;
+
     }
+
   });
+
+}
+
+
+document.body.onload = function(){
+  for(i=0; i<localStorage.length; i++){
+    console.log(`i= ${i}`)
+    nomeLS = localStorage.key(i);
+    console.log(`nomeLS= ${nomeLS}`)
+    tarefaAtual = localStorage.getItem(nomeLS)
+    console.log(`tarefaAtual= ${tarefaAtual}`)
+    tarefas.appendChild(tarefaAtual);
+  }
 }
