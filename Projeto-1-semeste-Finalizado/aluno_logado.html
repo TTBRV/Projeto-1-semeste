@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous" defer></script>
+    <script src="js/script.js" defer></script>
+    <link rel="stylesheet" href="css/styles4.css" />
+</head>
+<body>
+    <nav class="navbar bg-dark navbar-expand-lg ">
+        <div class="container-fluid ">
+            <a class="navbar-brand" href="#"><img src="https://previews.123rf.com/images/captainvector/captainvector2207/captainvector220762362/189372823-opened-book-icon.jpg" style="filter: invert(100);" width="40px"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link active text-light" aria-current="page" href="index.html">Início</a></li>
+                <li class="nav-item"><a class="nav-link text-light" href="professores.html">Professores</a></li>
+                <li class="nav-item"><a class="nav-link text-light" href="alunos.html">Alunos</a></li>
+              </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="conteudo">
+        <div class="filtros-inline">
+            <h3>Filtrar por:</h3>
+            <button id="filtrarPendentes">Pendentes</button>
+            <button id="filtrarConcluidas">Concluídas</button>
+            <button id="limparFiltro" type="button">Limpar filtragem</button>
+        </div>
+    </div>
+
+    <div class="todolist">
+        <h2>Olá, Aluno(a)!</h2>
+        <p>Aqui você pode organizar suas tarefas e não enlouquecer.</p>
+        <form action="">
+          <input id="novaTarefaInput" type="text" placeholder="Nova tarefa" />
+          <button id="btnAdicionar" type="button">Adicionar</button>
+          <br /><br />
+        </form>
+        <div id="tarefas"></div>
+    </div>
+    <footer>
+        <a href="professores.html" class="card-link">Voltar ao login</a><br /><br />
+        <a href="index.html" class="card-link">Voltar à página inicial</a>
+    </footer>
+</body>
+</html>
